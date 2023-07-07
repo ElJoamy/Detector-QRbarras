@@ -2,11 +2,14 @@ import os
 import csv
 import webbrowser
 import time
+from dotenv import load_dotenv
 
 class ResultSaver:
     def __init__(self):
-        directorio_base = "Detector-QRbarras"
-        self.directorio_resultados = os.path.join(directorio_base, "resultados_qr")
+        load_dotenv()  # Cargar variables de entorno desde el archivo .env
+        
+        directorio_base = os.getenv("DIRECTORIO_BASE")
+        self.directorio_resultados = os.path.join(directorio_base, os.getenv("DIRECTORIO_RESULTADOS"))
         self.enlaces_abiertos = {}
 
     def guardar_resultados(self, codigos_detectados, archivo):
@@ -57,7 +60,7 @@ class ResultSaver:
 
     def leer_codigos_escaneados(self):
         codigos_previos = {}
-        archivo_codigos = os.path.join(self.directorio_resultados, "codigos_escaneados.csv")
+        archivo_codigos = os.path.join(self.directorio_resultados, f"{os.getenv('ARCHIVO_CODIGOS')}.csv")
         if os.path.exists(archivo_codigos):
             with open(archivo_codigos, "r") as file:
                 reader = csv.reader(file)
@@ -67,7 +70,7 @@ class ResultSaver:
         return codigos_previos
 
     def guardar_codigos_escaneados(self, codigos_previos):
-        archivo_codigos = os.path.join(self.directorio_resultados, "codigos_escaneados.csv")
+        archivo_codigos = os.path.join(self.directorio_resultados, f"{os.getenv('ARCHIVO_CODIGOS')}.csv")
         with open(archivo_codigos, "w", newline="") as file:
             writer = csv.writer(file)
             for contenido, numero_qr in codigos_previos.items():

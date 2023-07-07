@@ -47,7 +47,7 @@ class LiveBarcodeQRDetector(detector.BarcodeQRDetector):
                 cv2.imshow("Deteccion de codigos", fotograma)
 
                 # Guardar los resultados
-                self.result_saver.guardar_resultados(codigos, "resultados.csv")
+                self.result_saver.guardar_resultados(codigos, "links.csv")
 
                 # Salir del bucle si se presiona la tecla 'q'
                 if cv2.waitKey(1) & 0xFF == ord('q'):

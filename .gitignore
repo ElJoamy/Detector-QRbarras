@@ -1,0 +1,8 @@
+# ignorar la carpeta resultados_qr 
+resultados_qr/
+
+# ignorar la carpeta __pycache__
+__pycache__/
+
+# ignorar el .env
+.env
