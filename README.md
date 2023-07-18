@@ -35,7 +35,15 @@ pip install -r requirements.txt
 
 ## 💻 Uso
 
-1. Instalación de dependencias:
+1. Clonación del repositorio:
+
+   Clona el repositorio en tu dispositivo:
+
+   ```bash
+   git clone https://github.com/ElJoamy/Detector-QRbarras.git
+   ```
+
+2. Instalación de dependencias:
 
    Asegúrate de tener instaladas las siguientes bibliotecas:
 
@@ -45,7 +53,7 @@ pip install -r requirements.txt
 
    Las bibliotecas necesarias se encuentran en el archivo `requirements.txt` y se pueden instalar con el comando anterior.
 
-2. Configuración de variables de entorno:
+3. Configuración de variables de entorno:
 
    - Crea un archivo `.env` en el mismo directorio que los archivos `.py`. Puedes utilizar el archivo de ejemplo [`env.example`](.env.example) como referencia.
 
@@ -59,7 +67,7 @@ pip install -r requirements.txt
 
    - Guarda el archivo `.env` con las configuraciones.
 
-3. Ejecución:
+4. Ejecución:
 
    - Para detectar códigos QR en tiempo real:
 
